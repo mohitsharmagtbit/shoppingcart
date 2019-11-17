@@ -1,0 +1,25 @@
+
+
+<div *ngIf="!cartEmpty;else elseBlock">
+  
+    <div *ngFor="let product of productsInfo">
+        <div class="row">
+            <div *ngIf="product.count > 0" class="card">
+                <div>{{product.title}}</div>
+                <img [src]="product.loc" height="100"><span>Quantity:{{product.count}}</span>
+                <br />
+            </div>
+        </div>        
+    </div>
+    <br/>
+    <button style="float: right">Buy</button>
+</div>
+
+<ng-template #elseBlock>  
+Your Cart Is Empty!! Continue Shopping
+</ng-template>  
+
+<div id="container" style="width:100%; height:400px;"></div>
+
+        
+

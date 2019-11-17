@@ -1,0 +1,21 @@
+<div class="row">
+    <a style="text-align: right;" [routerLink]="['/cart']">
+        Checkout
+    </a>
+</div>
+<div class="row">
+    <div *ngFor="let product of products">
+        <div class="column">
+            <div class="card">
+                <div>{{product.title}}</div>
+                <img [src]="product.loc" height="100"><br />
+                <div>Add To Cart
+                    <button (click)="updateCount(product.id,'decrement')">-</button>
+                    {{product.count}}
+                    <button (click)="updateCount(product.id,'increment')">+</button>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
